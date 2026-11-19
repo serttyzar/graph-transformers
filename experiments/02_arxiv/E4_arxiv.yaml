@@ -1,0 +1,49 @@
+experiment: E4_arxiv
+dataset: ogbn-arxiv
+seeds:
+- 0
+- 1
+- 2
+train:
+  epochs: 600
+  patience: 150
+  lr: 0.001
+  weight_decay: 0.0
+  grad_clip: 1.0
+  log_every: 25
+  min_epochs: 400
+variants:
+  gcn:
+    model: gcn
+    hidden: 256
+    layers: 3
+    dropout: 0.5
+    lr: 0.01
+  sgformer-like:
+    model: sgformer
+    hidden: 256
+    gcn_layers: 3
+    dropout: 0.5
+    alpha: 0.5
+    beta: 0.5
+    lr: 0.001
+  nagphormer-like:
+    model: nagphormer
+    hidden: 256
+    hops: 7
+    layers: 2
+    heads: 4
+    dropout: 0.1
+    attn_dropout: 0.1
+    batch_size: 2000
+    lr: 0.001
+    eval_batch_size: 2000
+    epochs: 600
+    patience: 150
+    min_epochs: 400
+    weight_decay: 1.0e-05
+    scheduler: cosine
+    warmup_frac: 0.05
+protocol_version: '4.0'
+priority: 2
+kind: training

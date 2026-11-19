@@ -1,0 +1,11 @@
+method,metric,alpha,alpha_stderr,n_points,min_n,max_n,note
+full,fwd_bwd_time_s,1.475987689801134,0.17385445891046075,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+full,peak_mem_mb,1.8202275519609208,0.05863803202847061,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+hop-token,fwd_bwd_time_s,0.8024756790166658,0.08487748519748178,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+hop-token,peak_mem_mb,0.0874169761534224,0.049379592198805444,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+linear,fwd_bwd_time_s,0.06372280681710427,0.06631493919309304,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+linear,peak_mem_mb,0.3734834808252645,0.05342893824785449,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+sparse-expander,fwd_bwd_time_s,0.9519955203923105,0.010716471311101863,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+sparse-expander,peak_mem_mb,0.7958203071869006,0.035431663190812535,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+sparse-neigh,fwd_bwd_time_s,0.14677087068630457,0.07172996495841817,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup
+sparse-neigh,peak_mem_mb,0.6641690527959742,0.04722050037433656,5,1000,20000,finite range fit; constant width/hops/average degree; failed/guarded points excluded; RSS includes setup

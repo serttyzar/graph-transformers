@@ -1,0 +1,68 @@
+experiment: E1_zinc
+dataset: zinc
+budget: 500000
+base:
+  model: gt
+  node_enc: []
+  pair_enc: null
+  edge_bias: false
+  attn_mask: full
+  lappe_k: 8
+  lappe_sign_flip: true
+  rwse_k: 16
+  rrwp_k: 17
+  spd_max: 10
+  max_degree: 64
+  layers: 8
+  heads: 4
+  dropout: 0.0
+  attn_dropout: 0.2
+  d_model: 88
+  d_ff: 176
+  use_edge_attr: false
+  pooling: sum
+  raw_pe_norm: batch
+train:
+  epochs: 1500
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 1.0e-05
+  warmup_frac: 0.03333333333333333
+  grad_clip: 1.0
+  log_every: 50
+  eval_batch_size: 128
+seeds:
+- 0
+- 1
+- 2
+variants:
+  gt-none: {}
+  gt-lappe:
+    node_enc:
+    - lappe
+  gt-rwse:
+    node_enc:
+    - rwse
+  gt-spd:
+    pair_enc: spd
+  gt-rrwp:
+    pair_enc: rrwp
+  gt-neigh-rwse:
+    node_enc:
+    - rwse
+    attn_mask: neighbors
+  gps-rwse:
+    model: gps
+    node_enc:
+    - rwse
+    d_model: null
+    d_ff: null
+  gin-rwse:
+    model: mpnn
+    node_enc:
+    - rwse
+    d_model: null
+    d_ff: null
+protocol_version: '4.0'
+priority: 1
+kind: training

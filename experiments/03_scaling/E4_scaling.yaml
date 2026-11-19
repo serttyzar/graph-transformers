@@ -1,0 +1,30 @@
+experiment: E4_scaling
+methods:
+- full
+- sparse-neigh
+- sparse-expander
+- linear
+- hop-token
+num_nodes:
+- 1000
+- 2000
+- 5000
+- 10000
+- 20000
+- 100000
+skip_after_oom: true
+d_model: 64
+heads: 4
+layers: 2
+avg_degree: 10
+repeats: 3
+warmup: 1
+reps:
+- 0
+- 1
+- 2
+protocol_version: '4.0'
+priority: 3
+hop_batch_size: 2048
+kind: benchmark
+resource_guard: separate_host_gpu
